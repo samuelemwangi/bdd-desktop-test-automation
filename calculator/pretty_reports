@@ -1,0 +1,24 @@
+
+Scenario Outline: Addition         [90m# src/test/resources/ui/features/Calculator.feature:11[0m
+  [32mGiven [0m[32mI have opened a calculator[0m [90m# calculator.ui.steps.Calculator.step_impl_load_calc()[0m
+  [32mWhen [0m[32mI add [0m[32m[1m"3"[0m[32m and [0m[32m[1m"4"[0m           [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mI click equals[0m               [90m# calculator.ui.steps.Calculator.step_impl_click_equals()[0m
+  [32mThen [0m[32mThe result should be [0m[32m[1m"7"[0m    [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m
+
+Scenario Outline: Addition         [90m# src/test/resources/ui/features/Calculator.feature:12[0m
+  [32mGiven [0m[32mI have opened a calculator[0m [90m# calculator.ui.steps.Calculator.step_impl_load_calc()[0m
+  [32mWhen [0m[32mI add [0m[32m[1m"4"[0m[32m and [0m[32m[1m"4"[0m           [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mI click equals[0m               [90m# calculator.ui.steps.Calculator.step_impl_click_equals()[0m
+  [32mThen [0m[32mThe result should be [0m[32m[1m"8"[0m    [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m
+
+Scenario Outline: Addition         [90m# src/test/resources/ui/features/Calculator.feature:13[0m
+  [32mGiven [0m[32mI have opened a calculator[0m [90m# calculator.ui.steps.Calculator.step_impl_load_calc()[0m
+  [32mWhen [0m[32mI add [0m[32m[1m"40"[0m[32m and [0m[32m[1m"44"[0m         [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mI click equals[0m               [90m# calculator.ui.steps.Calculator.step_impl_click_equals()[0m
+  [32mThen [0m[32mThe result should be [0m[32m[1m"84"[0m   [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m
+
+Scenario Outline: Addition         [90m# src/test/resources/ui/features/Calculator.feature:14[0m
+  [32mGiven [0m[32mI have opened a calculator[0m [90m# calculator.ui.steps.Calculator.step_impl_load_calc()[0m
+  [32mWhen [0m[32mI add [0m[32m[1m"400"[0m[32m and [0m[32m[1m"424"[0m       [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mI click equals[0m               [90m# calculator.ui.steps.Calculator.step_impl_click_equals()[0m
+  [32mThen [0m[32mThe result should be [0m[32m[1m"824"[0m  [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m

@@ -52,6 +52,14 @@
             <artifactId>java-client</artifactId>
             <version>7.3.0</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+        <dependency>
+            <groupId>net.masterthought</groupId>
+            <artifactId>cucumber-reporting</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+
     </dependencies>
 
 </project>

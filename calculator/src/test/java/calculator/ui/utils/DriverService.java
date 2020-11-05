@@ -1,7 +1,7 @@
 package calculator.ui.utils;
 
 import io.appium.java_client.windows.WindowsDriver;
-import org.openqa.selenium.Platform;
+import io.appium.java_client.windows.WindowsElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -18,11 +18,9 @@ public class DriverService {
 
     private static long runDuration = 0;
 
-    private static WindowsDriver driver = null;
+    private static WindowsDriver<WindowsElement> winDriver = null;
 
-    public static Properties prop = new Properties();
-
-    public String ProjectName = "";
+    private static final Properties prop = new Properties();
 
     public DriverService() {
         try {
@@ -50,13 +48,10 @@ public class DriverService {
             URL remoteUrl = new URL(prop.getProperty("RemoteUrl"));
 
             //Initiate driver with remote Url and desired capabilities
-            driver = new WindowsDriver(remoteUrl, desiredCapabilities);
+            winDriver = new WindowsDriver<WindowsElement>(remoteUrl, desiredCapabilities);
 
             //Set implicit Timeout for app loading
-            driver.manage().timeouts().implicitlyWait(Long.parseLong(prop.getProperty("Timeout")), TimeUnit.SECONDS);
-
-            // Project Name
-            ProjectName = prop.getProperty("ProjectName");
+            winDriver.manage().timeouts().implicitlyWait(Long.parseLong(prop.getProperty("Timeout")), TimeUnit.SECONDS);
 
         } catch (Exception e) {
 
@@ -66,20 +61,23 @@ public class DriverService {
 
     }
 
-    public WindowsDriver getDriver() {
+    public WindowsDriver<WindowsElement> getDriver() {
 
-        if (driver == null) {
+        if (winDriver == null) {
             setupDriver();
         }
-        return driver;
+        return winDriver;
     }
 
     @AfterSuite(alwaysRun = true)
     public void tearDownDriver() {
 
-        if (driver != null) driver.quit();
-        runDuration =  System.currentTimeMillis() - runDuration;
-        System.out.println("Test took " + runDuration +" ms");
+        if (winDriver != null) winDriver.quit();
+        runDuration = System.currentTimeMillis() - runDuration;
+        System.out.println("Test took " + runDuration + " ms");
+
+        // Generate report
+        ReportHelper.generateReport("");
     }
 
 
