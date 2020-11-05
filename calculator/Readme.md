@@ -1,4 +1,4 @@
-**Automating Desktop App using BDD Java**
+**BDD Desktop App Test Automation (Java)**
 
 **Set up (***Dependent on Windows 10 and Windows Calc app***)**
  
