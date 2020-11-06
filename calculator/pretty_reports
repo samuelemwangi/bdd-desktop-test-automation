@@ -13,12 +13,18 @@ Scenario Outline: Addition         [90m# src/test/resources/ui/features/Calcula
 
 Scenario Outline: Addition         [90m# src/test/resources/ui/features/Calculator.feature:13[0m
   [32mGiven [0m[32mI have opened a calculator[0m [90m# calculator.ui.steps.Calculator.step_impl_load_calc()[0m
-  [32mWhen [0m[32mI add [0m[32m[1m"40"[0m[32m and [0m[32m[1m"44"[0m         [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
+  [32mWhen [0m[32mI add [0m[32m[1m"404"[0m[32m and [0m[32m[1m"409"[0m       [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
   [32mAnd [0m[32mI click equals[0m               [90m# calculator.ui.steps.Calculator.step_impl_click_equals()[0m
-  [32mThen [0m[32mThe result should be [0m[32m[1m"84"[0m   [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m
+  [32mThen [0m[32mThe result should be [0m[32m[1m"813"[0m  [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m
 
 Scenario Outline: Addition         [90m# src/test/resources/ui/features/Calculator.feature:14[0m
   [32mGiven [0m[32mI have opened a calculator[0m [90m# calculator.ui.steps.Calculator.step_impl_load_calc()[0m
-  [32mWhen [0m[32mI add [0m[32m[1m"400"[0m[32m and [0m[32m[1m"424"[0m       [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
+  [32mWhen [0m[32mI add [0m[32m[1m"010"[0m[32m and [0m[32m[1m"010"[0m       [90m# calculator.ui.steps.Calculator.step_impl_add_nums(java.lang.String,java.lang.String)[0m
   [32mAnd [0m[32mI click equals[0m               [90m# calculator.ui.steps.Calculator.step_impl_click_equals()[0m
-  [32mThen [0m[32mThe result should be [0m[32m[1m"824"[0m  [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m
+  [32mThen [0m[32mThe result should be [0m[32m[1m"20"[0m   [90m# calculator.ui.steps.Calculator.step_impl_total_sum(java.lang.String)[0m
+
+Scenario Outline: Subtraction         [90m# src/test/resources/ui/features/Calculator.feature:24[0m
+  [32mGiven [0m[32mI have opened a calculator[0m    [90m# calculator.ui.steps.Calculator.step_impl_load_calc()[0m
+  [32mWhen [0m[32mI subtract [0m[32m[1m"3"[0m[32m from [0m[32m[1m"6"[0m        [90m# calculator.ui.steps.Calculator.step_impl_minus_nums(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mI click equals to subtract[0m      [90m# calculator.ui.steps.Calculator.step_impl_click_minus_equals()[0m
+  [32mThen [0m[32mThe minus result should be [0m[32m[1m"3"[0m [90m# calculator.ui.steps.Calculator.step_impl_diff_result(java.lang.String)[0m

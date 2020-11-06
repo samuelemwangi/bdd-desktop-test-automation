@@ -1,7 +1,12 @@
 package calculator.ui;
 
+import calculator.ui.utils.DriverService;
+import io.appium.java_client.windows.WindowsDriver;
+import io.appium.java_client.windows.WindowsElement;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
@@ -15,10 +20,26 @@ import org.testng.annotations.DataProvider;
         }
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
+
+    protected DriverService driverService = new DriverService();
+
     @Override
     @DataProvider(parallel = false)
     public Object[][] scenarios() {
 
         return super.scenarios();
+
     }
+
+    @BeforeSuite(alwaysRun = true)
+    public void setUp(){
+        driverService.setupDriver();
+
+    }
+
+    @AfterSuite(alwaysRun = true)
+    public void tearDown() {
+        driverService.tearDownDriver();
+    }
+
 }

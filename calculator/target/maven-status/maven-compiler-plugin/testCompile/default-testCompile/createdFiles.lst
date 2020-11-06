@@ -1,0 +1,8 @@
+calculator\ui\utils\ReportHelper.class
+calculator\ui\steps\Calculator.class
+calculator\ui\utils\DriverService.class
+calculator\ui\pages\BasePage.class
+calculator\ui\pages\CalculatorPage.class
+calculator\ui\TestRunner.class
+calculator\ui\utils\ConfigHelper.class
+calculator\ui\utils\SikuliHelper.class

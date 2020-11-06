@@ -25,6 +25,16 @@ public class Calculator {
         calPage.findSum();
     }
 
+    @When("I subtract {string} from {string}")
+    public void step_impl_minus_nums(String num2, String num1){
+        calPage.minusNums(num2, num1);
+    }
+
+    @When("I click equals to subtract")
+    public void step_impl_click_minus_equals(){
+        calPage.findDiff();
+    }
+
     @Then("The result should be {string}")
     public void step_impl_total_sum(String expectedResult) {
 
@@ -36,6 +46,19 @@ public class Calculator {
         }catch (Exception e){
             Assert.fail();
         }
+    }
+
+    @Then("The minus result should be {string}")
+    public void step_impl_diff_result(String expectedResult) {
+        try {
+
+            boolean actualResult =  calPage.getDiffResults();
+            Assert.assertTrue(actualResult);
+
+        }catch (AssertionError e){
+            Assert.fail(e.getMessage());
+        }
+
     }
 
 
