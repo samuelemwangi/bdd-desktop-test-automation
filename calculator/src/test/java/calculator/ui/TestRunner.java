@@ -1,6 +1,7 @@
 package calculator.ui;
 
-import calculator.ui.utils.DriverService;
+import calculator.ui.drivers.DesktopAppDriverService;
+import calculator.ui.drivers.IDriverService;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterSuite;
@@ -19,7 +20,7 @@ import org.testng.annotations.DataProvider;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    protected DriverService driverService = new DriverService();
+    protected IDriverService driverService = new DesktopAppDriverService();
 
     @Override
     @DataProvider(parallel = false)

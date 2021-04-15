@@ -1,5 +1,6 @@
 package calculator.ui.pages;
 
+import calculator.ui.drivers.DesktopAppDriverService;
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,6 +25,7 @@ public class CalculatorPage extends BasePage {
 
 
     public CalculatorPage() {
+        super(new DesktopAppDriverService());
         // initialize num buttons
         numButtons.put("0", "Zero");
         numButtons.put("1", "One");
